@@ -17,7 +17,7 @@ st.write(f"**Field of Research:** {field}")
 st.write(f"**Institution:** {institution}")
 
 st.image(
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+    "https://analyzing-testing.netzsch.com/_Resources/Persistent/5/c/4/0/5c40d3bd76701451d4248cef058e8754a16cca43/NETZSCH_Data-Science_Big-Data-scaled-1847x1038-1400x787.webp",
     caption="Nature (Pixabay)"
 )
 
@@ -76,22 +76,11 @@ weather_data = pd.DataFrame({
 st.subheader("STEM Data Viewer")
 data_option = st.selectbox(
     "Choose a dataset to explore", 
-    ["Physics Experiments", "Astronomy Observations", "Weather Data"]
+    [ "Quantum Computational Data", "Algorithm Efeciency Data "]
 )
 
-if data_option == "Physics Experiments":
-    st.write("### Physics Experiment Data")
-    st.dataframe(physics_data)
-    # Add widget to filter by Energy levels
-    energy_filter = st.slider("Filter by Energy (MeV)", 0.0, 10.0, (0.0, 10.0))
-    filtered_physics = physics_data[
-        physics_data["Energy (MeV)"].between(energy_filter[0], energy_filter[1])
-    ]
-    st.write(f"Filtered Results for Energy Range {energy_filter}:")
-    st.dataframe(filtered_physics)
-
-elif data_option == "Astronomy Observations":
-    st.write("### Astronomy Observation Data")
+if data_option == "Quantum Computational Data":
+    st.write("### Quantum Computational Data")
     st.dataframe(astronomy_data)
     # Add widget to filter by Brightness
     brightness_filter = st.slider("Filter by Brightness (Magnitude)", -15.0, 5.0, (-15.0, 5.0))
@@ -101,8 +90,8 @@ elif data_option == "Astronomy Observations":
     st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
     st.dataframe(filtered_astronomy)
 
-elif data_option == "Weather Data":
-    st.write("### Weather Data")
+elif data_option == "Algorithm Efeciency Data":
+    st.write("### Algorithm Efeciency Data")
     st.dataframe(weather_data)
     # Add widgets to filter by temperature and humidity
     temp_filter = st.slider("Filter by Temperature (°C)", -10.0, 40.0, (-10.0, 40.0))
@@ -119,3 +108,4 @@ st.header("Contact Information")
 email = "mothayenziwe93@gmail.com"
 
 st.write(f"You can reach {name} at {email}.")
+
